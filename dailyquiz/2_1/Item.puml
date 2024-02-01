@@ -1,0 +1,44 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+class ItemManager
+
+class Item
+class Album
+class Movie
+class Book
+
+Item <|-- Album
+Item <|-- Movie
+Item <|-- Book
+
+class ItemManager{
+    ArrayList <Item> itemList
+    showItems()
+}
+
+class Item{
+    id
+    name
+    price
+    show()
+}
+
+class Album{
+    artist
+    show()
+}
+
+class Movie{
+    String director
+    ArrayList<String> actors
+    show()
+}
+
+class Book{
+    author
+    isbn
+    show()
+}
+
+@enduml
