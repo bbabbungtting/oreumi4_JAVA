@@ -4,21 +4,5 @@
 ![img.png](week2WeeklyQuiz.png)
 
 ## UML
-```mermaid 
-classDiagram
-    interface DeliveryChargeCalculator
-    class Beauty extends Product implements DeliveryChargeCalculator
-    class Grocery extends Product implements DeliveryChargeCalculator
-    class LargeAppliance extends Product implements DeliveryChargeCalculator
 
-
-    interface DeliveryChargeCalculator{
-        BigDecimal getDeliveryCharge(weight, price)
-    }
-
-    class Product{
-        + name
-        + price
-        + weight
-    }
-```
+![class-diagram](http://www.plantuml.com/plantuml/proxy?src=https://github.com/bbabbungtting/oreumi4_JAVA/blob/master/src/weeklyquiz/week2/deliveryCharge.puml)
