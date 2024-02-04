@@ -9,12 +9,19 @@ class LargeAppliance extends Product implements DeliveryChargeCalculator
 
 interface DeliveryChargeCalculator{
     BigDecimal getDeliveryCharge(weight, price)
+    void show()
 }
 
 class Product{
-    + name
-    + price
-    + weight
+    - name
+    - price
+    - weight
+    # deliveryCharge
+
+    + showProduct()
+    + showDeliveryCharge(BigDecimal charge)
+    + getWeight()
+    + getPrice()
 }
 
 @enduml

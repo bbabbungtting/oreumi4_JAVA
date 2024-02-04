@@ -38,5 +38,5 @@ public interface DeliveryChargeCalculator {
         return deliveryCharge;
     }
 
-    public void show();
+    void show();
 }
