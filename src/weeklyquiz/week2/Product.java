@@ -8,6 +8,7 @@ public class Product{
     private String name;
     private BigDecimal price;
     private BigDecimal weight;
+    protected BigDecimal deliveryCharge;
 
     Product(String name, int price, double weight){
         this.name = name;
@@ -19,6 +20,10 @@ public class Product{
         System.out.println("상품명 : " + name + " | 가격 : " + price + " | 무게 : " + weight);
     }
 
+    public void showDeliveryCharge(BigDecimal charge){
+        System.out.println("배송 가격은 : " + charge + " 입니다.");
+    }
+
     public BigDecimal getWeight() {
         return weight;
     }
@@ -26,4 +31,5 @@ public class Product{
     public BigDecimal getPrice() {
         return price;
     }
+
 }
