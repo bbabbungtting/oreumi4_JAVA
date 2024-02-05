@@ -1,7 +1,7 @@
 # Java Daily Quiz 02/05
 
 ## 🗺 UML
-![img.png](DeliveryPriceUML.png)
+![img.png](DeliveryPriceUML.PNG)
 
 ## 📑기능 설명
 ### Promotion
