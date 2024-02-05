@@ -1,0 +1,23 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+interface Promotion{
+    +getDiscountAmount()
+}
+
+class Product implements Promotion{
+    - name
+    - price
+    - weight
+}
+
+class Grocery extends Product
+class Beauty extends Product
+class LargeAppliance extends Product
+
+class Cart{
+    Product[] products
+    + calculateDeliveryCharge()
+}
+
+@enduml
