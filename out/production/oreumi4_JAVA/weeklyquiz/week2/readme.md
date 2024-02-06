@@ -1,12 +1,12 @@
 # Java Week 2 Weekly Quiz
 
-## 기능 명세서
+## 📝 기능 명세서
 ![img.png](week2WeeklyQuiz.png)
 
-## UML
+## 🗺 UML
 ![uml.png](PUML.png)
 
-## 기능 설명
+## 🛠 기능 설명
 ### OrderService.java
 - 상품별로 다른 클래스를 활용하여 여러가지 상품 클래스 생성
 - 생성된 상품들을 ArrayLIst를 통해서 삽입
