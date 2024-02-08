@@ -2,17 +2,18 @@ import java.util.*;
 
 public class FirstMain {
     public static void main(String[] args) {
-        int start_num = 3;
-        int end_num = 10;
+        List<String> list = new ArrayList<>();
+        list.add("손흥민");
+        list.add("이강인");
+        list.add("황희찬");
+        list.add("박용우");
+        list.remove("박용우");
+        list.add("조현우");
+        System.out.println(list);
 
-        int gap = end_num - start_num;
-
-        int[] answer = new int[gap + 1];
-
-        for (int i = 0; i <= gap; i++) {
-            answer[i] = i + start_num;
+        for (int i = 0; i < list.size(); i++) {
+            System.out.println(list.get(i));
         }
-
 
     }
 }
