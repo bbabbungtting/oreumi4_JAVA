@@ -1,0 +1,26 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+AddressBook -> Contact
+
+class Contact {
+    - name: String
+    - phoneNumber: String
+}
+
+class BusinessContact extends Contact{
+    - company : String
+}
+
+class PersonalContact extends Contact{
+    - relationship : String
+}
+
+class AddressBook{
+    - contacts : List<Contact>
+    + displaycontacts()
+    + serchContact(String) : Contact
+}
+
+
+@enduml

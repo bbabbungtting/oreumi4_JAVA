@@ -1,15 +1,17 @@
 package weeklyquiz.week3;
 
-import weeklyquiz.week3.view.InputView;
-import weeklyquiz.week3.view.OutputView;
+import weeklyquiz.week3.domain.*;
+import weeklyquiz.week3.view.*;
 
 public class Controller {
     private InputView inputView;
     private OutputView outputView;
+    private AddressBook addressBook;
 
     Controller(){
         inputView = new InputView();
         outputView = new OutputView();
+        addressBook = new AddressBook();
     }
 
     public void start(){
@@ -28,12 +30,17 @@ public class Controller {
     private boolean function(int menuNum){
         switch (menuNum){
             case 1:
+                addBusinessContact();
                 break;
             case 2:
+                addPersonalContact();
                 break;
             case 3:
+                //addressBook.displayContacts();
+                outputView.displayContacts(addressBook.getContacts());
                 break;
             case 4:
+                searchContact();
                 break;
             case 5:
                 return true;
@@ -46,12 +53,28 @@ public class Controller {
     }
 
     private void addBusinessContact(){
+        String name = inputView.inputName();
+        String phoneNumber = inputView.inputPhoneNumber();
+        String company = inputView.inputCompanuy();
 
+        BusinessContact newContact = new BusinessContact(name,phoneNumber,company);
+
+        addressBook.addContact(newContact);
     }
 
     private void addPersonalContact(){
+        String name = inputView.inputName();
+        String phoneNumber = inputView.inputPhoneNumber();
+        String relationship = inputView.inputRelationship();
 
+        PersonalContact newContact = new PersonalContact(name,phoneNumber,relationship);
+
+        addressBook.addContact(newContact);
     }
 
+    private void searchContact(){
+        String name = inputView.inputSearchName();
+        outputView.displaySearchContacts(addressBook.searchContact(name));
+    }
 
 }
