@@ -81,14 +81,16 @@
 - 사용자가 5번 메뉴를 선택했을 때 프로그램을 종료한다.
 ***
 ## 🗺 클래스 다이어그램
-![UMLimg](comming Soon...)
+![UMLimg](UMLimg.PNG)
 
 ***
 ## 🛠 상세 기능
 ### 📦 Model `domain`
 - **`AddressBook.java`**
   - 모든 연락처를 가지고 있는 클래스
+  - `addContact(newContact)` : 연락처를 추가하는 메소드
   - `displayContacts()` : 모든 연락처를 출력하는 메소드
+    - getter를 통해서 outView에서 출력하는 방식으로 수정
   - `serachContact(name)` : 이름이 일치하는 연락처를 찾아서 반환하는 메소드
 - **`Contact.java`**
   - 기본적인 연락처를 나타내는 클래스
@@ -100,10 +102,10 @@
   - Contact 클래스의 자식 클래스
 ### 🖥 View `view`
 - **출력 `OutputView.java`**
-  - 메뉴 출력
-  - 비즈니스 연락처 입력 양식 출력
-  - 개인 연락처 입력 양식 출력
-  - 모든 연락처 출력
+  - `printMenu()` : 메뉴 출력
+  - `printError(errorMessage)` : 에러 메세지 출력
+  - `displayContacts(contacts)` : 모든 연락처 출력
+  - `displaySearchContacts(contacts)` : 검색한 연락처 출력
 - **입력 `InputView.java`**
   - 메뉴 입력
   - 비즈니스 연락처 입력
@@ -117,3 +119,8 @@
 - 연락처 출력 기능
 - 연락처 검색 기능
 - 종료 기능
+
+## 보완할 점
+메뉴 입력시를 제외하고 예외 처리 기능을 구현하지 않았다. 
+
+다른 입력 부분에 대해서도 예외처리를 구현해야한다. 이때, 사용자 정의 Exception을 적극적으로 활용해 보면 좋을 듯 하다.
