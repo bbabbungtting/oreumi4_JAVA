@@ -1,6 +1,9 @@
 package chapter12;
 
+import java.util.Arrays;
+import java.util.List;
 import java.util.function.IntBinaryOperator;
+import java.util.stream.Stream;
 
 public class LambdaExample_5 {
     private static int[] scores = {10, 50, 3};
@@ -15,13 +18,24 @@ public class LambdaExample_5 {
 
     public static void main(String[] args) {
         int max = maxOrMin(
-                Math::max
+                (a, b) -> a > b ? a : b
+                //Math::max
         );
         System.out.println("최대값 : " + max);
 
         int min = maxOrMin(
-                Math::min
+                (a, b) -> a < b ? a : b
+                //Math::min
         );
         System.out.println("최소값: " + min);
+
+        Integer[][] arr2 = {{1,2}, {2,3}};
+        Stream<Integer> arr1 = Arrays.stream(arr2)
+                .flatMap(Arrays::stream);
+
+        arr1.forEach(System.out::println);
+
     }
+
+
 }
